@@ -11,6 +11,7 @@
   },
   "files": [
     "lib",
+    "assets",
     "README.md",
     "README.zh-CN.md",
     "README.i18n.yaml",

@@ -16,6 +16,18 @@
 
 ---
 
+## 📸 插件界面效果预览
+
+### 1. 顶栏原生指示器与全局悬浮胶囊效果
+![顶栏与悬浮胶囊效果图](./assets/preview-header.svg)
+
+### 2. 24 小时全景时间轴、官方分时价格对照表与快捷设置面板
+<p align="center">
+  <img src="./assets/preview-modal.svg" alt="全景详情弹窗效果图" width="600"/>
+</p>
+
+---
+
 ## 🌟 核心特性
 
 1. **精炼排版与优雅显示 (Concise Typography)**：

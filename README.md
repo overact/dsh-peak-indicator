@@ -14,6 +14,18 @@ Following DeepSeek API's new dynamic pricing policy effective **August 17, 2026 
 
 ---
 
+## 📸 Visual Previews
+
+### 1. Header Actions Chip & Floating Capsule Styles
+![Header Actions & Floating Capsule Preview](./assets/preview-header.svg)
+
+### 2. 24-Hour Timeline & Official Pricing Details Modal (with Live Countdown & Quick Settings)
+<p align="center">
+  <img src="./assets/preview-modal.svg" alt="Details Modal Preview" width="600"/>
+</p>
+
+---
+
 ## 🌟 Key Features
 
 1. **Concise & Non-Intrusive Typography**:
