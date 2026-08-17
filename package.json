@@ -34,5 +34,26 @@
     }
   },
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "author": "overact",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/overact/dsh-peak-indicator.git"
+  },
+  "homepage": "https://github.com/overact/dsh-peak-indicator#readme",
+  "bugs": {
+    "url": "https://github.com/overact/dsh-peak-indicator/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "dsh",
+    "deepseek",
+    "peak",
+    "off-peak",
+    "pricing",
+    "pricing-indicator",
+    "indicator",
+    "v4"
+  ]
 }
