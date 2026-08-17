@@ -54,10 +54,10 @@ Following DeepSeek API's new dynamic pricing policy effective **August 17, 2026 
 
 ## 📊 DeepSeek V4 Official Pricing Reference
 
-| Model Name | Cache Hit (Off-Peak / Peak) | Cache Miss (Off-Peak / Peak) | Output (Off-Peak / Peak) |
+| Model | Base Input (Miss)<br>*(Off-Peak / Peak)* | Cache Hit Input<br>*(Off-Peak / Peak)* | Model Output<br>*(Off-Peak / Peak)* |
 | :--- | :---: | :---: | :---: |
-| **DeepSeek-V4-Flash** | **¥0.05** / ¥0.10 | **¥1.50** / ¥3.00 | **¥4.50** / ¥9.00 |
-| **DeepSeek-V4-Pro** | **¥0.15** / ¥0.30 | **¥4.50** / ¥9.00 | **¥13.50** / ¥27.00 |
+| **DeepSeek-V4-Flash** | **¥1.50** / ¥3.00 | **¥0.05** / ¥0.10 | **¥4.50** / ¥9.00 |
+| **DeepSeek-V4-Pro** | **¥4.50** / ¥9.00 | **¥0.15** / ¥0.30 | **¥13.50** / ¥27.00 |
 
 *Prices in CNY (¥) per 1 Million Tokens.*
 
