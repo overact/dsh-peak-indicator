@@ -1,135 +1,150 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 320" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 340" width="100%" height="100%">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="100%" stop-color="#1e293b"/>
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="100%" stop-color="#1a2234"/>
     </linearGradient>
     <filter id="shadow" x="-5%" y="-10%" width="110%" height="125%">
-      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.35"/>
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
     </filter>
+    <style>
+      text {
+        font-family: 'WenQuanYi Zen Hei', 'Droid Sans Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .mono {
+        font-family: 'WenQuanYi Zen Hei Mono', ui-monospace, SFMono-Regular, monospace;
+      }
+    </style>
   </defs>
 
   <!-- Background Canvas -->
-  <rect width="920" height="320" rx="14" fill="url(#bgGrad)"/>
-  <rect x="1" y="1" width="918" height="318" rx="13" fill="none" stroke="#334155" stroke-width="1"/>
+  <rect width="940" height="340" rx="14" fill="url(#bgGrad)"/>
+  <rect x="1" y="1" width="938" height="338" rx="13" fill="none" stroke="#334155" stroke-width="1"/>
 
-  <!-- Window Header Bar 1: Off-Peak State -->
-  <g transform="translate(24, 24)" filter="url(#shadow)">
+  <!-- Window Header Bar 1: Off-Peak State (Full Mode) -->
+  <g transform="translate(24, 20)" filter="url(#shadow)">
     <!-- Container -->
-    <rect width="872" height="60" rx="10" fill="#1e2430" stroke="#334155" stroke-width="1"/>
+    <rect width="892" height="60" rx="10" fill="#1e2430" stroke="#334155" stroke-width="1"/>
     <!-- Mock UI: Session Title & Agent Preset -->
     <circle cx="24" cy="30" r="5" fill="#3b82f6"/>
-    <text x="38" y="34" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">DSH Session: 架构重构与代码优化</text>
-    <rect x="236" y="20" width="62" height="20" rx="4" fill="#0f172a" stroke="#475569" stroke-width="1"/>
-    <text x="267" y="34" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11" text-anchor="middle">standard</text>
+    <text x="38" y="34" fill="#f8fafc" font-size="13" font-weight="600">DSH Session: 架构重构与代码优化</text>
+    <rect x="250" y="20" width="62" height="20" rx="4" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="281" y="34" fill="#94a3b8" font-size="11" text-anchor="middle">standard</text>
 
     <!-- Quota Chip -->
-    <g transform="translate(380, 17)">
+    <g transform="translate(390, 17)">
       <rect width="130" height="26" rx="6" fill="rgba(59, 130, 246, 0.12)" stroke="rgba(59, 130, 246, 0.35)" stroke-width="1"/>
       <circle cx="14" cy="13" r="3.5" fill="#3b82f6"/>
-      <text x="24" y="17" fill="#60a5fa" font-family="-apple-system, sans-serif" font-size="11.5" font-weight="500">周额度 68% 13.6k</text>
+      <text x="24" y="17" fill="#60a5fa" font-size="11.5" font-weight="500">周额度 68% 13.6k</text>
     </g>
 
     <!-- dsh-peak-indicator (Off-Peak Full Mode) -->
-    <g transform="translate(520, 17)">
-      <rect width="180" height="26" rx="6" fill="rgba(16, 185, 129, 0.14)" stroke="rgba(16, 185, 129, 0.45)" stroke-width="1"/>
+    <g transform="translate(532, 17)">
+      <rect width="186" height="26" rx="6" fill="rgba(16, 185, 129, 0.14)" stroke="rgba(16, 185, 129, 0.45)" stroke-width="1"/>
       <!-- Glowing Green Dot -->
       <circle cx="14" cy="13" r="4.5" fill="#10b981"/>
       <circle cx="14" cy="13" r="6.5" fill="none" stroke="#10b981" stroke-width="1.2" stroke-opacity="0.45"/>
-      <text x="27" y="17" fill="#10b981" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">平峰 5折</text>
-      <text x="92" y="17" fill="#10b981" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11.5" opacity="0.9" letter-spacing="0.3">02:45:18</text>
+      <text x="27" y="17" fill="#10b981" font-size="12" font-weight="600">平峰 5折</text>
+      <text x="96" y="17" fill="#10b981" class="mono" font-size="11.5" font-weight="600" opacity="0.95" letter-spacing="0.3">02:45:18</text>
     </g>
 
     <!-- Right Header Tools -->
-    <g transform="translate(718, 17)">
-      <rect width="72" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
-      <text x="754" y="17" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11.5" text-anchor="middle">导出日志</text>
-      <circle cx="820" cy="13" r="10" fill="#334155"/>
-      <circle cx="848" cy="13" r="10" fill="#334155"/>
+    <g transform="translate(734, 17)">
+      <rect width="76" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="772" y="17" fill="#94a3b8" font-size="11.5" text-anchor="middle">导出日志</text>
+      <circle cx="836" cy="13" r="10" fill="#334155"/>
+      <circle cx="864" cy="13" r="10" fill="#334155"/>
     </g>
   </g>
 
   <!-- Window Header Bar 2: Peak State (Compact Mode) -->
-  <g transform="translate(24, 102)" filter="url(#shadow)">
+  <g transform="translate(24, 96)" filter="url(#shadow)">
     <!-- Container -->
-    <rect width="872" height="60" rx="10" fill="#1e2430" stroke="#334155" stroke-width="1"/>
+    <rect width="892" height="60" rx="10" fill="#1e2430" stroke="#334155" stroke-width="1"/>
     <!-- Mock UI: Session Title & Agent Preset -->
     <circle cx="24" cy="30" r="5" fill="#3b82f6"/>
-    <text x="38" y="34" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">DSH Session: 生产环境 Bug 快速排查</text>
-    <rect x="252" y="20" width="62" height="20" rx="4" fill="#0f172a" stroke="#475569" stroke-width="1"/>
-    <text x="283" y="34" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11" text-anchor="middle">standard</text>
+    <text x="38" y="34" fill="#f8fafc" font-size="13" font-weight="600">DSH Session: 生产环境 Bug 快速排查</text>
+    <rect x="264" y="20" width="62" height="20" rx="4" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="295" y="34" fill="#94a3b8" font-size="11" text-anchor="middle">standard</text>
 
     <!-- Quota Chip -->
-    <g transform="translate(436, 17)">
+    <g transform="translate(446, 17)">
       <rect width="130" height="26" rx="6" fill="rgba(59, 130, 246, 0.12)" stroke="rgba(59, 130, 246, 0.35)" stroke-width="1"/>
       <circle cx="14" cy="13" r="3.5" fill="#3b82f6"/>
-      <text x="24" y="17" fill="#60a5fa" font-family="-apple-system, sans-serif" font-size="11.5" font-weight="500">周额度 42% 8.4k</text>
+      <text x="24" y="17" fill="#60a5fa" font-size="11.5" font-weight="500">周额度 42% 8.4k</text>
     </g>
 
     <!-- dsh-peak-indicator (Peak Compact Mode) -->
-    <g transform="translate(576, 17)">
-      <rect width="124" height="26" rx="6" fill="rgba(245, 158, 11, 0.14)" stroke="rgba(245, 158, 11, 0.45)" stroke-width="1"/>
+    <g transform="translate(588, 17)">
+      <rect width="130" height="26" rx="6" fill="rgba(245, 158, 11, 0.14)" stroke="rgba(245, 158, 11, 0.45)" stroke-width="1"/>
       <!-- Glowing Orange Dot -->
       <circle cx="14" cy="13" r="4.5" fill="#f59e0b"/>
       <circle cx="14" cy="13" r="6.5" fill="none" stroke="#f59e0b" stroke-width="1.2" stroke-opacity="0.45"/>
-      <text x="27" y="17" fill="#f59e0b" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">高峰价</text>
-      <text x="74" y="17" fill="#f59e0b" font-family="ui-monospace, monospace" font-size="11" opacity="0.9">01:14:02</text>
+      <text x="27" y="17" fill="#f59e0b" font-size="12" font-weight="600">高峰价</text>
+      <text x="76" y="17" fill="#f59e0b" class="mono" font-size="11" font-weight="600" opacity="0.95">01:14:02</text>
     </g>
 
     <!-- Right Header Tools -->
-    <g transform="translate(718, 17)">
-      <rect width="72" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
-      <text x="754" y="17" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11.5" text-anchor="middle">导出日志</text>
-      <circle cx="820" cy="13" r="10" fill="#334155"/>
-      <circle cx="848" cy="13" r="10" fill="#334155"/>
+    <g transform="translate(734, 17)">
+      <rect width="76" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="772" y="17" fill="#94a3b8" font-size="11.5" text-anchor="middle">导出日志</text>
+      <circle cx="836" cy="13" r="10" fill="#334155"/>
+      <circle cx="864" cy="13" r="10" fill="#334155"/>
     </g>
   </g>
 
-  <!-- Showcase Cards: Features Banner -->
-  <g transform="translate(24, 182)">
-    <!-- Card 1: 3 Display Modes -->
+  <!-- Showcase Feature Cards -->
+  <g transform="translate(24, 176)">
+    <!-- Card 1: 3 Display Styles -->
     <g transform="translate(0, 0)">
-      <rect width="276" height="114" rx="8" fill="#1e2430" stroke="#334155" stroke-width="1"/>
-      <text x="16" y="26" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">3 种顶栏显示样式 (Display Styles)</text>
-      <!-- Mode 1: Icon Only -->
-      <g transform="translate(16, 38)">
+      <rect width="284" height="142" rx="8" fill="#1e2430" stroke="#334155" stroke-width="1"/>
+      <text x="14" y="24" fill="#f8fafc" font-size="12" font-weight="600">3 种顶栏显示样式 (Display Styles)</text>
+      
+      <!-- Style 1: Icon Only -->
+      <g transform="translate(14, 38)">
         <rect width="28" height="22" rx="4" fill="rgba(16, 185, 129, 0.15)" stroke="rgba(16, 185, 129, 0.4)"/>
         <circle cx="14" cy="11" r="3.5" fill="#10b981"/>
-        <text x="36" y="16" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="11">极简圆点</text>
+        <text x="36" y="15" fill="#94a3b8" font-size="11">极简圆点 (<tspan fill="#cbd5e1">icon_only</tspan>)</text>
       </g>
-      <!-- Mode 2: Compact -->
-      <g transform="translate(16, 64)">
+      <!-- Style 2: Compact -->
+      <g transform="translate(14, 68)">
         <rect width="84" height="22" rx="4" fill="rgba(16, 185, 129, 0.15)" stroke="rgba(16, 185, 129, 0.4)"/>
         <circle cx="10" cy="11" r="3.5" fill="#10b981"/>
-        <text x="22" y="15" fill="#10b981" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">平峰 5折</text>
-        <text x="94" y="16" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="11">紧凑状态</text>
+        <text x="22" y="15" fill="#10b981" font-size="11" font-weight="600">平峰 5折</text>
+        <text x="94" y="15" fill="#94a3b8" font-size="11">紧凑模式 (<tspan fill="#cbd5e1">compact</tspan>)</text>
       </g>
-      <!-- Mode 3: Full -->
-      <g transform="translate(16, 90)">
-        <text x="0" y="-2" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10.5">完整模式：包含秒级倒计时实时跳动</text>
+      <!-- Style 3: Full -->
+      <g transform="translate(14, 98)">
+        <rect width="140" height="22" rx="4" fill="rgba(16, 185, 129, 0.15)" stroke="rgba(16, 185, 129, 0.4)"/>
+        <circle cx="10" cy="11" r="3.5" fill="#10b981"/>
+        <text x="22" y="15" fill="#10b981" font-size="11" font-weight="600">平峰 5折</text>
+        <text x="76" y="15" fill="#10b981" class="mono" font-size="11">02:45:18</text>
+        <text x="150" y="15" fill="#94a3b8" font-size="11">完整模式 (<tspan fill="#cbd5e1">full</tspan>)</text>
       </g>
     </g>
 
     <!-- Card 2: Floating Pill -->
-    <g transform="translate(298, 0)">
-      <rect width="276" height="114" rx="8" fill="#1e2430" stroke="#334155" stroke-width="1"/>
-      <text x="16" y="26" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">全局悬浮胶囊 (Floating Capsule)</text>
-      <g transform="translate(16, 42)">
-        <rect width="168" height="28" rx="14" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(245, 158, 11, 0.6)" stroke-width="1.2"/>
-        <circle cx="16" cy="14" r="4.5" fill="#f59e0b"/>
-        <text x="28" y="18" fill="#f59e0b" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">高峰价</text>
-        <text x="74" y="18" fill="#f8fafc" font-family="monospace" font-size="11.5">01:14:02</text>
+    <g transform="translate(304, 0)">
+      <rect width="284" height="142" rx="8" fill="#1e2430" stroke="#334155" stroke-width="1"/>
+      <text x="14" y="24" fill="#f8fafc" font-size="12" font-weight="600">全局悬浮胶囊 (Floating Capsule)</text>
+      <g transform="translate(14, 40)">
+        <rect width="176" height="30" rx="15" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(245, 158, 11, 0.65)" stroke-width="1.2"/>
+        <circle cx="16" cy="15" r="4.5" fill="#f59e0b"/>
+        <text x="28" y="19" fill="#f59e0b" font-size="12" font-weight="600">高峰价</text>
+        <text x="76" y="19" fill="#f8fafc" class="mono" font-size="12" font-weight="600">01:14:02</text>
       </g>
-      <text x="16" y="96" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10.5">支持右上角 / 左上角 / 顶部居中多位置停靠</text>
+      <text x="14" y="94" fill="#cbd5e1" font-size="11">📍 停靠位置：右上角 / 左上角 / 顶部居中</text>
+      <text x="14" y="116" fill="#64748b" font-size="10.5">支持全局毛玻璃背景与悬浮跟随</text>
     </g>
 
     <!-- Card 3: Multi-Timezone & Rules -->
-    <g transform="translate(596, 0)">
-      <rect width="276" height="114" rx="8" fill="#1e2430" stroke="#334155" stroke-width="1"/>
-      <text x="16" y="26" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">智能时区换算 &amp; 避峰指引</text>
-      <text x="16" y="52" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="11.5">🕒 本地与北京 (UTC+8) 双时钟对照</text>
-      <text x="16" y="74" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="11.5">⚡ 自动换算下一次时段切换的本地时刻</text>
-      <text x="16" y="96" fill="#10b981" font-family="-apple-system, sans-serif" font-size="11.5" font-weight="500">💰 平峰 17 小时享 50% 半价优惠</text>
+    <g transform="translate(608, 0)">
+      <rect width="284" height="142" rx="8" fill="#1e2430" stroke="#334155" stroke-width="1"/>
+      <text x="14" y="24" fill="#f8fafc" font-size="12" font-weight="600">多时区换算 &amp; 避峰指引</text>
+      <text x="14" y="52" fill="#cbd5e1" font-size="11.5">🕒 本地与北京 (UTC+8) 双时区实时对照</text>
+      <text x="14" y="76" fill="#cbd5e1" font-size="11.5">⚡ 自动换算下一次时段切换的本地时刻</text>
+      <text x="14" y="100" fill="#10b981" font-size="11.5" font-weight="600">💰 每日 17 小时平峰期享受 50% 半价优惠</text>
+      <text x="14" y="122" fill="#94a3b8" font-size="10.5">🔔 支持跨时段桌面通知与权限自动引导</text>
     </g>
   </g>
 </svg>
