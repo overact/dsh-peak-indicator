@@ -2,7 +2,7 @@
   "name": "dsh-peak-indicator",
   "version": "0.1.1",
   "private": true,
-  "description": "DeepSeek Peak / Off-Peak Time Banner & Indicator for DSH Web GUI (live status, timezone auto-detection, countdown, SVG icons, discount rules)",
+  "description": "DeepSeek Peak / Off-Peak Time Indicator for DSH Web GUI (live status, timezone auto-detection, countdown, SVG icons, discount schedule)",
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",

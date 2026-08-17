@@ -1,9 +1,9 @@
 title:
-  zh: 'DeepSeek 高峰/平峰定价指示器'
-  en: 'DeepSeek Peak / Off-Peak Pricing Indicator'
+  zh: 'DeepSeek 高峰/平峰时段提示器'
+  en: 'DeepSeek Peak / Off-Peak Time Indicator'
 description:
-  zh: 'DSH Web GUI 官方分时定价指示器：实时提示高峰/平峰时段、秒级倒计时、多时区转换、24小时可视化时间轴与官方最新价格表。'
-  en: 'DeepSeek Peak / Off-Peak banner and indicator for DSH Web GUI: live pricing status, countdown, timezone conversion, 24-hour visual schedule timeline, and official price table.'
+  zh: 'DSH Web GUI 峰谷分时时段提示器：实时提示高峰与平峰时段、秒级倒计时、多时区转换、24小时可视化时间轴与官方最新价格表。'
+  en: 'DeepSeek Peak / Off-Peak time indicator for DSH Web GUI: live pricing status, countdown, timezone conversion, 24-hour visual schedule timeline, and official price table.'
 languages:
   - id: en
     path: ./README.md

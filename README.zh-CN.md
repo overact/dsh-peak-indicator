@@ -1,8 +1,8 @@
-# dsh-peak-indicator (DeepSeek 高峰/平峰定价指示器)
+# dsh-peak-indicator (DeepSeek 高峰/平峰时段提示器)
 
 [English](./README.md) | 中文 (Chinese)
 
-**DeepSeek Harness (DSH) Web GUI 官方峰谷分时定价指示器**：实时显示 DeepSeek V4 官方 API 高峰与平峰时段状态、秒级切换倒计时、多时区智能转换、24 小时全景可视化时段轴与官方最新价格对照表。
+**DeepSeek Harness (DSH) Web GUI 官方峰谷分时时段提示器**：实时显示 DeepSeek V4 官方 API 高峰与平峰时段状态、秒级切换倒计时、多时区智能转换、24 小时全景可视化时段轴与官方最新价格对照表。
 
 ---
 

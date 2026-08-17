@@ -1,8 +1,8 @@
-# dsh-peak-indicator
+# dsh-peak-indicator (DeepSeek Peak / Off-Peak Time Indicator)
 
 English | [中文 (Chinese)](./README.zh-CN.md)
 
-**DeepSeek Peak / Off-Peak Time Banner & Indicator for DSH Web GUI**: Real-time status chip, live countdown, multi-timezone auto-conversion, 24-hour visual schedule timeline, and official DeepSeek V4 API pricing table.
+**DeepSeek Peak / Off-Peak Time Indicator for DSH Web GUI**: Real-time pricing window status chip, live countdown, multi-timezone auto-conversion, 24-hour visual schedule timeline, and official DeepSeek V4 API pricing reference table.
 
 ---
 
