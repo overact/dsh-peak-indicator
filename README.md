@@ -29,8 +29,8 @@ Following DeepSeek API's new dynamic pricing policy effective **August 17, 2026 
 ## 🌟 Key Features
 
 1. **Concise & Non-Intrusive Typography**:
-   - **English labels**: `Peak Rate` & `Off-Peak 50%`.
-   - **Chinese labels**: `高峰价` & `平峰 5折`.
+   - **English labels**: `Peak Rate` & `Off-Peak`.
+   - **Chinese labels**: `高峰价` & `平峰`.
    - Balanced compact width that aligns gracefully with session titles, model selectors, and token quota chips.
 
 2. **Native Session Header Docking (Zero Overlay Conflict)**:
