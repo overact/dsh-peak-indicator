@@ -11,6 +11,7 @@
   },
   "files": [
     "lib",
+    "test",
     "assets",
     "README.md",
     "README.zh-CN.md",
@@ -19,6 +20,11 @@
   ],
   "engines": {
     "node": ">=20"
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js",
+    "test": "node --test test/plugin.test.js",
+    "verify": "npm run check && npm run test"
   },
   "dsh": {
     "bundle": {
