@@ -23,6 +23,8 @@ const {
   escapeHtmlAttr,
   getTzOffsetString,
   t,
+  getLocale,
+  I18N,
 } = __test
 
 /** Beijing wall-clock (UTC+8) -> epoch ms. */
@@ -201,4 +203,56 @@ test('small helpers behave: padZero, escapeHtmlAttr, timezone offset format', ()
     return 'UTC' + sign + h + (m > 0 ? ':' + (m < 10 ? '0' + m : m) : '')
   })()
   assert.equal(getTzOffsetString(), expected)
+})
+
+test('V4.1 Flash pricing reflects official Sept 10 12:00 update', () => {
+  assert.equal(I18N.zh.flashHitPrice, '¥0.02 / ¥0.04')
+  assert.equal(I18N.zh.flashMissPrice, '¥1.00 / ¥2.00')
+  assert.equal(I18N.zh.flashOutPrice, '¥4.00 / ¥8.00')
+
+  assert.equal(I18N.en.flashHitPrice, '¥0.02 / ¥0.04')
+  assert.equal(I18N.en.flashMissPrice, '¥1.00 / ¥2.00')
+  assert.equal(I18N.en.flashOutPrice, '¥4.00 / ¥8.00')
+
+  assert.match(I18N.zh.pricingEffective, /2026-09-10 12:00/)
+  assert.match(I18N.en.pricingEffective, /12:00.*Sep 10, 2026/)
+})
+
+test('V4 Pro auto routing to V4.1 Flash is clearly stated in zh and en', () => {
+  assert.match(I18N.zh.proRoutingNotice, /DeepSeek-V4-Pro.*自动路由.*DeepSeek-V4\.1-Flash/)
+  assert.match(I18N.en.proRoutingNotice, /DeepSeek-V4-Pro.*automatically routed.*DeepSeek-V4\.1-Flash/)
+
+  assert.match(I18N.zh.pricingRule4, /DeepSeek-V4-Pro.*路由.*DeepSeek-V4\.1-Flash/)
+  assert.match(I18N.en.pricingRule4, /DeepSeek-V4-Pro.*routed.*DeepSeek-V4\.1-Flash/)
+})
+
+test('compact mode displays icon and countdown', () => {
+  assert.equal(DEFAULT_SETTINGS.displayStyle, 'compact')
+  assert.match(I18N.zh.styleCompact, /图标.*倒计时/)
+  assert.match(I18N.en.styleCompact, /Icon.*Countdown/)
+})
+
+test('I18N dictionaries have complete key parity between zh and en', () => {
+  const zhKeys = Object.keys(I18N.zh).sort()
+  const enKeys = Object.keys(I18N.en).sort()
+  assert.deepEqual(zhKeys, enKeys, 'All keys must exist in both zh and en')
+})
+
+test('getLocale follows DSH document.documentElement.lang setting', () => {
+  // Save previous global state
+  const prevDoc = globalThis.document
+
+  try {
+    globalThis.document = { documentElement: { lang: 'en' } }
+    assert.equal(getLocale(), 'en')
+
+    globalThis.document = { documentElement: { lang: 'zh-CN' } }
+    assert.equal(getLocale(), 'zh')
+
+    globalThis.document = { documentElement: { lang: 'en-US' } }
+    assert.equal(getLocale(), 'en')
+  } finally {
+    if (prevDoc === undefined) delete globalThis.document
+    else globalThis.document = prevDoc
+  }
 })
