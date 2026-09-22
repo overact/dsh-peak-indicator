@@ -19,6 +19,9 @@ const {
   normalizeSettings,
   calculateStatus,
   getBeijingTime,
+  isChinaHoliday,
+  isChinaAdjustedWorkday,
+  getChinaHolidayName,
   padZero,
   escapeHtmlAttr,
   getTzOffsetString,
@@ -255,4 +258,86 @@ test('getLocale follows DSH document.documentElement.lang setting', () => {
     if (prevDoc === undefined) delete globalThis.document
     else globalThis.document = prevDoc
   }
+})
+
+test('Chinese statutory holidays are fully off-peak (National Day 2026-10-01 weekday)', () => {
+  // 2026-10-01 is a Thursday (ordinarily a peak window 09:00~12:00 / 14:00~18:00)
+  assert.equal(new Date(Date.UTC(2026, 9, 1)).getUTCDay(), 4, '2026-10-01 should be Thursday')
+  const status = calculateStatus(DEFAULT_SETTINGS, new Date(bjMs(2026, 10, 1, 10, 30, 0)))
+  assert.equal(status.isPeak, false, 'National Day holiday must be off-peak even on Thursday morning')
+  assert.equal(status.isOffPeak, true)
+  assert.equal(status.isHoliday, true)
+  assert.equal(status.holidayName, '国庆节')
+  // Switches to the next normal working day: 2026-10-08 09:00 CST
+  // Oct 1 10:30 CST -> Oct 8 09:00 CST = 166.5 hours = 599,400s
+  assert.equal(status.remainingSec, 166.5 * 3600)
+  assert.equal(status.countdownStr, '166:30:00')
+})
+
+test('Mid-Autumn festival weekday is off-peak and skips holiday and weekend', () => {
+  // 2026-09-25 is Friday
+  assert.equal(new Date(Date.UTC(2026, 8, 25)).getUTCDay(), 5, '2026-09-25 should be Friday')
+  const status = calculateStatus(DEFAULT_SETTINGS, new Date(bjMs(2026, 9, 25, 15, 0, 0)))
+  assert.equal(status.isPeak, false, 'Mid-Autumn holiday must be off-peak on Friday afternoon')
+  assert.equal(status.isOffPeak, true)
+  assert.equal(status.isHoliday, true)
+  assert.equal(status.holidayName, '中秋节')
+  // Next peak starts Mon 2026-09-28 09:00 CST (skipping Fri holiday and Sat/Sun weekend)
+  // Fri 15:00 CST -> Mon 09:00 CST = 9h (Fri) + 48h (weekend) + 9h (Mon) = 66 hours
+  assert.equal(status.remainingSec, 66 * 3600)
+  assert.equal(status.countdownStr, '66:00:00')
+})
+
+test('Weekend make-up workdays are off-peak under DeepSeek official 2026-09-19 policy', () => {
+  // 2026-09-20 is Sunday, a designated National Day make-up workday
+  assert.equal(new Date(Date.UTC(2026, 8, 20)).getUTCDay(), 0, '2026-09-20 should be Sunday')
+  const sunStatus = calculateStatus(DEFAULT_SETTINGS, new Date(bjMs(2026, 9, 20, 10, 30, 0)))
+  assert.equal(sunStatus.isPeak, false, 'Sunday make-up workday must remain off-peak')
+  assert.equal(sunStatus.isOffPeak, true)
+  assert.equal(sunStatus.isWeekend, true)
+  assert.equal(sunStatus.isAdjustedWorkday, true)
+  // Switches to Monday morning 09:00
+  assert.equal(sunStatus.remainingSec, 22.5 * 3600)
+
+  // 2026-10-10 is Saturday, another National Day make-up workday
+  assert.equal(new Date(Date.UTC(2026, 9, 10)).getUTCDay(), 6, '2026-10-10 should be Saturday')
+  const satStatus = calculateStatus(DEFAULT_SETTINGS, new Date(bjMs(2026, 10, 10, 15, 0, 0)))
+  assert.equal(satStatus.isPeak, false, 'Saturday make-up workday must remain off-peak')
+  assert.equal(satStatus.isOffPeak, true)
+  assert.equal(satStatus.isWeekend, true)
+  assert.equal(satStatus.isAdjustedWorkday, true)
+  // Sat 15:00 -> Mon 09:00 = 42 hours
+  assert.equal(satStatus.remainingSec, 42 * 3600)
+})
+
+test('Spring Festival 9-day holiday span jumps across holidays to first working day', () => {
+  // Fri 2026-02-13 18:30 CST (after Friday peak).
+  // 2/14 is Sat make-up workday (weekend -> off-peak)
+  // 2/15~2/23 is Spring Festival (off-peak)
+  // First peak is Tue 2026-02-24 09:00 CST
+  const status = calculateStatus(DEFAULT_SETTINGS, new Date(bjMs(2026, 2, 13, 18, 30, 0)))
+  assert.equal(status.isPeak, false)
+  // 2/13 18:30 to 2/24 09:00 = 5.5h + 10 * 24h + 9h = 254.5h
+  assert.equal(status.remainingSec, 254.5 * 3600)
+  assert.equal(status.countdownStr, '254:30:00')
+})
+
+test('holiday and make-up workday metadata helpers identify dates accurately', () => {
+  assert.equal(isChinaHoliday(2026, 10, 1), true)
+  assert.equal(getChinaHolidayName(2026, 10, 1), '国庆节')
+  assert.equal(isChinaHoliday(2026, 8, 19), false)
+  assert.equal(getChinaHolidayName(2026, 8, 19), null)
+
+  assert.equal(isChinaAdjustedWorkday(2026, 9, 20), true)
+  assert.equal(isChinaAdjustedWorkday(2026, 10, 10), true)
+  assert.equal(isChinaAdjustedWorkday(2026, 8, 19), false)
+})
+
+test('pricingRule5 and holiday statements are present in zh and en dictionaries', () => {
+  assert.match(I18N.zh.pricingRule5, /法定节假日/)
+  assert.match(I18N.zh.pricingRule5, /调休/)
+  assert.match(I18N.zh.pricingRule5, /空闲时段/)
+  assert.match(I18N.en.pricingRule5, /public holidays.*make-up workdays.*off-peak/i)
+  assert.match(I18N.zh.pricingEffective, /2026-09-19/)
+  assert.match(I18N.en.pricingEffective, /Sep 19/)
 })

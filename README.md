@@ -8,7 +8,10 @@ English | [中文 (Chinese)](./README.zh-CN.md)
 
 ## 📖 Overview
 
-Following DeepSeek API's dynamic pricing policy effective **September 10, 2026 12:00 (Beijing Time / UTC+8)**, peak hours are billed at regular rates, while off-peak hours enjoy a **50% discount (half price)** across cache-hit input, cache-miss input, and output tokens. DeepSeek-V4-Pro requests are automatically routed to DeepSeek-V4.1-Flash and billed at V4.1 Flash prices.
+Following DeepSeek API's dynamic pricing policy effective **September 10, 2026 12:00 (Beijing Time / UTC+8)** and official clarification on **September 19, 2026**:
+- **Peak Hours**: Monday to Friday (excluding Chinese statutory holidays) **`09:00~12:00`** and **`14:00~18:00`** (Beijing Time / UTC+8), billed at standard official rates.
+- **Off-Peak Hours (50% Half-Price Discount)**: All remaining weekday hours, **all Saturdays and Sundays**, **all Chinese public holidays**, and **weekend make-up workdays** enjoy 50% discount across cache-hit input, cache-miss input, and output tokens.
+- **V4 Pro Auto-Routing**: DeepSeek-V4-Pro requests are automatically routed to DeepSeek-V4.1-Flash and billed at V4.1 Flash prices.
 
 **`dsh-peak-indicator`** integrates seamlessly into the DeepSeek Harness (DSH) Web GUI to give developers and teams instantaneous awareness of current pricing windows, countdowns to the next schedule switch, and transparent cost references.
 
@@ -38,9 +41,9 @@ Following DeepSeek API's dynamic pricing policy effective **September 10, 2026 1
    - Participates in standard flexbox flow layout with zero element overlap.
    - Optional global floating pill mode (`top-right`, `top-left`, `top-center`).
 
-3. **Accurate DeepSeek Official Schedule Rules (V4.1)**:
-   - **Peak Windows**: Monday to Friday **`09:00~12:00`** & **`14:00~18:00`** (Beijing Time / UTC+8).
-   - **Off-Peak Windows**: Remaining weekday hours and all day Saturday/Sunday (50% discount).
+3. **Accurate DeepSeek Official Schedule Rules (V4.1 & Sep 19 Holiday Update)**:
+   - **Peak Windows**: Monday to Friday (excluding Chinese statutory holidays) **`09:00~12:00`** & **`14:00~18:00`** (Beijing Time / UTC+8).
+   - **Off-Peak Windows**: Remaining weekday hours, all day Saturday/Sunday, Chinese statutory holidays, and weekend make-up workdays (50% discount).
    - **Focus on V4.1 Core Model**: Pricing table displays `DeepSeek-V4.1-Flash` (V4.1 F); DeepSeek-V4-Pro requests automatically route to V4.1 Flash.
 
 4. **Multi-Timezone Auto-Detection & Dual Clocks**:
