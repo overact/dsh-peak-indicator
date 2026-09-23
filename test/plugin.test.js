@@ -221,12 +221,23 @@ test('V4.1 Flash pricing reflects official Sept 10 12:00 update', () => {
   assert.match(I18N.en.pricingEffective, /12:00.*Sep 10, 2026/)
 })
 
-test('V4 Pro auto routing to V4.1 Flash is clearly stated in zh and en', () => {
-  assert.match(I18N.zh.proRoutingNotice, /DeepSeek-V4-Pro.*自动路由.*DeepSeek-V4\.1-Flash/)
-  assert.match(I18N.en.proRoutingNotice, /DeepSeek-V4-Pro.*automatically routed.*DeepSeek-V4\.1-Flash/)
+test('V4 Pro independent pricing and no-auto-routing notice are clearly stated in zh and en', () => {
+  assert.equal(I18N.zh.proHitPrice, '¥0.15 / ¥0.30')
+  assert.equal(I18N.zh.proMissPrice, '¥4.50 / ¥9.00')
+  assert.equal(I18N.zh.proOutPrice, '¥13.50 / ¥27.00')
 
-  assert.match(I18N.zh.pricingRule4, /DeepSeek-V4-Pro.*路由.*DeepSeek-V4\.1-Flash/)
-  assert.match(I18N.en.pricingRule4, /DeepSeek-V4-Pro.*routed.*DeepSeek-V4\.1-Flash/)
+  assert.equal(I18N.en.proHitPrice, '¥0.15 / ¥0.30')
+  assert.equal(I18N.en.proMissPrice, '¥4.50 / ¥9.00')
+  assert.equal(I18N.en.proOutPrice, '¥13.50 / ¥27.00')
+
+  assert.match(I18N.zh.pricingRule3, /DeepSeek-V4-Pro/)
+  assert.match(I18N.en.pricingRule3, /DeepSeek-V4-Pro/)
+
+  assert.match(I18N.zh.proRoutingNotice, /DeepSeek-V4-Pro.*不再自动路由/)
+  assert.match(I18N.en.proRoutingNotice, /DeepSeek-V4-Pro.*no longer.*routed/i)
+
+  assert.match(I18N.zh.pricingRule4, /DeepSeek-V4-Pro.*不再自动路由/)
+  assert.match(I18N.en.pricingRule4, /DeepSeek-V4-Pro.*no longer.*routed/i)
 })
 
 test('compact mode displays icon and countdown', () => {

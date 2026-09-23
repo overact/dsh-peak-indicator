@@ -11,7 +11,7 @@ English | [中文 (Chinese)](./README.zh-CN.md)
 Following DeepSeek API's dynamic pricing policy effective **September 10, 2026 12:00 (Beijing Time / UTC+8)** and official clarification on **September 19, 2026**:
 - **Peak Hours**: Monday to Friday (excluding Chinese statutory holidays) **`09:00~12:00`** and **`14:00~18:00`** (Beijing Time / UTC+8), billed at standard official rates.
 - **Off-Peak Hours (50% Half-Price Discount)**: All remaining weekday hours, **all Saturdays and Sundays**, **all Chinese public holidays**, and **weekend make-up workdays** enjoy 50% discount across cache-hit input, cache-miss input, and output tokens.
-- **V4 Pro Auto-Routing**: DeepSeek-V4-Pro requests are automatically routed to DeepSeek-V4.1-Flash and billed at V4.1 Flash prices.
+- **Core Model Support**: Full coverage of `DeepSeek-V4.1-Flash` and `DeepSeek-V4-Pro` flagship models (independently billed with peak/off-peak discounts).
 
 **`dsh-peak-indicator`** integrates seamlessly into the DeepSeek Harness (DSH) Web GUI to give developers and teams instantaneous awareness of current pricing windows, countdowns to the next schedule switch, and transparent cost references.
 
@@ -44,7 +44,7 @@ Following DeepSeek API's dynamic pricing policy effective **September 10, 2026 1
 3. **Accurate DeepSeek Official Schedule Rules (V4.1 & Sep 19 Holiday Update)**:
    - **Peak Windows**: Monday to Friday (excluding Chinese statutory holidays) **`09:00~12:00`** & **`14:00~18:00`** (Beijing Time / UTC+8).
    - **Off-Peak Windows**: Remaining weekday hours, all day Saturday/Sunday, Chinese statutory holidays, and weekend make-up workdays (50% discount).
-   - **Focus on V4.1 Core Model**: Pricing table displays `DeepSeek-V4.1-Flash` (V4.1 F); DeepSeek-V4-Pro requests automatically route to V4.1 Flash.
+   - **Dual Model Coverage**: Displays pricing tiers for both `DeepSeek-V4.1-Flash` (V4.1 F) and `DeepSeek-V4-Pro` (independently billed).
 
 4. **Multi-Timezone Auto-Detection & Dual Clocks**:
    - Automatically detects user browser local timezone and UTC offset.
@@ -73,9 +73,10 @@ Following DeepSeek API's dynamic pricing policy effective **September 10, 2026 1
 | Model | Base Input (Miss)<br>*(Off-Peak / Peak)* | Cache Hit Input<br>*(Off-Peak / Peak)* | Model Output<br>*(Off-Peak / Peak)* |
 | :--- | :---: | :---: | :---: |
 | **DeepSeek-V4.1-Flash (V4.1 F)** | **¥1.00** / ¥2.00 | **¥0.02** / ¥0.04 | **¥4.00** / ¥8.00 |
+| **DeepSeek-V4-Pro** | **¥4.50** / ¥9.00 | **¥0.15** / ¥0.30 | **¥13.50** / ¥27.00 |
 
 *Notes:*
-1. *DeepSeek-V4-Pro is automatically routed to DeepSeek-V4.1-Flash and billed at V4.1 Flash rates.*
+1. *DeepSeek-V4-Pro is billed independently (no longer auto-routed to Flash); both models support peak/off-peak rates.*
 2. *Prices in CNY (¥) per 1 Million Tokens.*
 
 ---
