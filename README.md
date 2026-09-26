@@ -64,7 +64,7 @@ Following DeepSeek API's dynamic pricing policy effective **September 10, 2026 1
    - Automatically follows DSH system language preferences with live hot-switching support.
 
 8. **Sidebar Footer Quick-Access Action**:
-   - Mounts a status dot at the right edge of the sidebar footer (`sidebar.footer.action`, order `1000`) without disturbing existing action buttons.
+   - Mounts a status dot inline with the other sidebar footer buttons (left-aligned) (`sidebar.footer.action`, order `1000`) without disturbing existing action buttons.
 
 ---
 
