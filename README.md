@@ -2,6 +2,11 @@
 
 English | [中文 (Chinese)](./README.zh-CN.md)
 
+> [!IMPORTANT]
+> **This plugin has moved to [dsh-statusline-plus](https://github.com/overact/dsh-statusline-plus).** Its peak/off-peak indicator, countdown, daily timeline and sidebar-footer dot are now part of Statusline Plus, which also follows the official schedule and holiday calendar. This repository is no longer maintained.
+>
+> To migrate, install Statusline Plus (see its [Installation](https://github.com/overact/dsh-statusline-plus#-installation) section), then remove `dsh-peak-indicator` from your profile's `dependencies` and `bundles` to avoid duplicate indicators.
+
 **DeepSeek Peak / Off-Peak Time Indicator for DSH Web GUI**: Real-time pricing window status chip, live countdown, multi-timezone auto-conversion, 24-hour visual schedule timeline, and official DeepSeek API pricing reference table (V4.1 pricing rules).
 
 ---

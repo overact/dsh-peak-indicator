@@ -2,6 +2,11 @@
 
 [English](./README.md) | 中文 (Chinese)
 
+> [!IMPORTANT]
+> **本插件已迁移至 [dsh-statusline-plus](https://github.com/overact/dsh-statusline-plus)。** 峰/平峰指示、倒计时、当天时间轴和侧栏指示点都已并入 Statusline Plus，并按官方时段规则和节假日日历更新。本仓库不再维护。
+>
+> 迁移方法：按 Statusline Plus 的[安装说明](https://github.com/overact/dsh-statusline-plus#-installation)安装，然后从 profile 的 `dependencies` 和 `bundles` 中移除 `dsh-peak-indicator`，避免出现重复的指示器。
+
 **DeepSeek Harness (DSH) Web GUI 官方峰谷分时时段提示器**：实时显示 DeepSeek 官方 API 高峰与平峰时段状态、秒级切换倒计时、多时区智能转换、24 小时全景可视化时段轴与官方最新价格对照表（V4.1 计费规则）。
 
 ---
